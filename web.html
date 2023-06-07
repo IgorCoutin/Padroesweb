@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="formabody2">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./CSS/main.css" media="screen" />
+    <title>Média aritmética versão 2</title>
+    <style>
+        #media {
+          color: blue;
+        }
+    
+        #situacao {
+          color: red;
+        }
+      </style>
+      <script>
+        function calcularMedia() {
+          // Obter nota1
+          var nota1 = parseFloat(document.getElementById("nota1").value);
+    
+          // Obter nota2
+          var nota2 = parseFloat(document.getElementById("nota2").value);
+    
+          // Calcular média
+          var media = (nota1 + nota2) / 2;
+    
+          var situacao, cor;
+    
+          // Verificar a situação e definir a cor
+          if (media >= 6) {
+            situacao = "Aprovado";
+            cor = "blue";
+          } else {
+            situacao = "Reprovado";
+            cor = "red";
+      }
+      // Exibir a média e a situação
+      document.getElementById("media").innerHTML = "Média: " + media.toFixed(2);
+      document.getElementById("situacao").innerHTML = "Situação: " + situacao;
+      document.getElementById("situacao").style.color = cor;
+    }
+  </script>
+</head>
+<body id="formabody2">
+    <h1>Resultado Avaliações</h1>
+    <label for="nota1">Nota 1:</label>
+    <input type="number" id="nota1"><br>
+    <label for="nota2">Nota 2:</label>
+    <input type="number" id="nota2"><br>
+    <button onclick="calcularMedia()">Calcular Média</button><br>
+    <span id="media"></span><br>
+    <span id="situacao"></span>
+</body>
+</html>
